@@ -4,20 +4,26 @@ body{
 
 div.my-carousel-container{
     min-height: 700px;
-    min-width:800px ;
+    min-width: 800px ;
 }
 
 div.my-carousel-images{
-    background-color: cadetblue;
-    min-height: 540px;
+    height: 900px;
 }
 
-.my-carousel-images.my-active{
+.my-carousel-images img{
+    width: 90%;
+    object-fit: cover;
 }
+
 
 div.my-thumbnails{
-    background-color: violet;
-    min-height: 160px;
+    height: 160px;
+    display: flex;
+}
+
+.my-thumbnails img{
+    width: 100%;
 }
 
 div.my-previous,

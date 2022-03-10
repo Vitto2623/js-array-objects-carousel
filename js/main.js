@@ -17,6 +17,7 @@ E se volessi un bottone per invertire la "direzione" del carosello?
  *
  */
 
+
 const gallery = [
     {
         item: '01.jpg',
@@ -45,7 +46,9 @@ const gallery = [
     },
 ]
 
+
 let content = "";
+let contatore = 0;
 
 for ( let i = 0; i < gallery.length; i++){
     content += ` 
@@ -54,19 +57,29 @@ for ( let i = 0; i < gallery.length; i++){
     </div>`
 }
 
-const carouselWrapper = document.querySelector('div.my-carousel-container');
-carouselWrapper.innerHTML = content
+const carouselWrapper = document.querySelector('div.my-thumbnails');
+carouselWrapper.innerHTML += content
 
-const carouselElements = document.getElementsByClassName('my-carousel-images');
-carouselElements[0].classList.add('active');
+const carouselElements = document.querySelector('div.my-carousel-images');
+carouselElements.innerHTML = `<img src="img/${gallery[contatore].item}" alt="${gallery[contatore].title}">`
 
-// recupero bottone
-const nextButton = document.querySelector("div.my-next");
+//dentro i pulsanti next e prev devi inserire il codice incrementando o decrementando il contatore e poi metti:
+//carouselElements.innerHTML = `<img src="img/${gallery[contatore].item}" alt="${gallery[contatore].title}">`
 
-let activeElement = 0;
-
+const nextButton = document.querySelector('.my-next');
 nextButton.addEventListener('click', function(){
-    carouselElements[activeElement].classList.remove('active');
-    activeElement++;
-    carouselElements[activeElement].classList.add('active');
-})
+    contatore++
+    if (contatore == 5){
+        contatore = 0;
+    }
+    carouselElements.innerHTML = `<img src="img/${gallery[contatore].item}" alt="${gallery[contatore].title}">`
+});
+
+const previousButton = document.querySelector('.my-previous');
+previousButton.addEventListener('click', function(){
+    contatore--
+    if (contatore == -1){
+        contatore = 4;
+    }
+    carouselElements.innerHTML = `<img src="img/${gallery[contatore].item}" alt="${gallery[contatore].title}">`
+});
