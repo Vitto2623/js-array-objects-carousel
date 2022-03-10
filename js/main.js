@@ -61,8 +61,7 @@ const carouselElements = document.getElementsByClassName('my-carousel-images');
 carouselElements[0].classList.add('active');
 
 // recupero bottone
-const nextButton = document.getElementsByClassName('my-next');
-console.log(nextButton)
+const nextButton = document.querySelector("div.my-next");
 
 let activeElement = 0;
 

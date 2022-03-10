@@ -10,12 +10,9 @@ div.my-carousel-container{
 div.my-carousel-images{
     background-color: cadetblue;
     min-height: 540px;
-    display: none;
 }
 
-
 .my-carousel-images.my-active{
-    display: block;
 }
 
 div.my-thumbnails{
