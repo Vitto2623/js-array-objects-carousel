@@ -4,21 +4,21 @@ body{
 
 div.my-carousel-container{
     min-height: 700px;
-    min-width: 800px ;
+    min-width: 800px;
 }
 
 div.my-carousel-images{
-    height: 900px;
+    min-height: 540px;
 }
 
 .my-carousel-images img{
-    width: 90%;
-    object-fit: cover;
+    width: 100%;
+    height: 600px;
 }
 
 
 div.my-thumbnails{
-    height: 160px;
+    min-height: 160px;
     display: flex;
 }
 
@@ -41,10 +41,12 @@ div.my-next{
 
 div.my-previous{
     left: 1rem;
+    background-color: red;
 }
 
 div.my-next{
     right: 1rem;
+    background-color: red;
 }
 
 div.my-previous > span::after{
@@ -59,4 +61,15 @@ div.my-next > span::after{
     font-weight: 900;
     content: "\f520";
     line-height: 30px;
+}
+
+
+.my-border{
+    border: 5px solid red;
+    border: none;
+}
+
+.my-border.active-border{
+    border: 5px solid red;
+    display: block;
 }
